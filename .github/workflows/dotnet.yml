@@ -69,7 +69,6 @@ jobs:
       run: dotnet test ${{github.workspace}}/webapp/webapp.csproj --no-restore --verbosity normal
 
     - name: pack
-       <IsPackable>true</IsPackable>
       run: dotnet pack ${{github.workspace}}/webapp/webapp.csproj  --output ./artifacts --configuration Release -p:Version=${{ steps.gitversion.outputs.nuGetVersionV2 }}
     
     - name: Upload Artifacts
@@ -92,6 +91,6 @@ jobs:
         with:
           dotnet-version: 3.1.301
       - name: add package source
-        run: dotnet nuget add source https://nuget.pkg.github.com/venusiddoji/index.json -n github -u vsiddoji -p ${{secrets.WEBGET1}} --store-password-in-clear-text
+        run: dotnet nuget add source https://nuget.pkg.github.com/venusiddoji/index.json -n github -u venusiddoji -p ${{secrets.WEBGET1}} --store-password-in-clear-text
       - name: publish
         run: dotnet nuget push ./nupkg/**.nupkg --source github --api-key ${{secrets.WEBGET1}} 
