@@ -69,6 +69,7 @@ jobs:
       run: dotnet test ${{github.workspace}}/webapp/webapp.csproj --no-restore --verbosity normal
 
     - name: pack
+       <IsPackable>true</IsPackable>
       run: dotnet pack ${{github.workspace}}/webapp/webapp.csproj  --output ./artifacts --configuration Release -p:Version=${{ steps.gitversion.outputs.nuGetVersionV2 }}
     
     - name: Upload Artifacts
