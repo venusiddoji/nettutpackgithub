@@ -2,6 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
+  
+  <ItemGroup>
+    <Compile Remove="Properties\**" />
+    <EmbeddedResource Remove="Properties\**" />
+    <None Remove="Properties\**" />
+  </ItemGroup>
+  
+   <PropertyGroup>
+    <PackageId>WebEngine</PackageId>
+    <Authors>Venu</Authors>
+    <Company>AadyaIT</Company>
+    <PackageDescription>Calculation Engine</PackageDescription>
+    <RepositoryUrl>https://github.com/venusiddoji/packagemanagement</RepositoryUrl>
+  </PropertyGroup>
+  
 
 </Project>
